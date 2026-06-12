@@ -10,6 +10,6 @@ const {
 router.route("/login").post(login)
 router.route("/register").post(register)
 router.route("/token").post(token)
-router.route("/logout").post(logout)
+router.route("/logout").delete(logout)
 
 module.exports = router

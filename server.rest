@@ -10,7 +10,8 @@ POST http://localhost:3000/api/v1/auth/token
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF6aXoiLCJpYXQiOjE3ODEwMzE2MDR9.OdtRwzeG6iO1kW3oo4lGpCl9c4wu7Ldthh-uvQqdXyc"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF6aXoiLCJpZCI6IjZhMjliYTU4YWEwN2UxMzcwOGNmZGRkOCIsImlhdCI6MTc4MTI5ODEwNX0.XCZXFRJrP1dAXlIPWDyrUZBMbf07oHZu-z9zXxz3C-0"
+    
 }
 
 ###
@@ -29,8 +30,44 @@ Content-Type: application/json
 
 {
     "username": "aziz",
-    "password": "aziz123"
+    "password": "aziz123",
+    "deviceId": "my PC"
+}
+
+###
+POST http://localhost:3000/api/v1/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyYW5tZSI6ImF6aXoiLCJpZCI6IjZhMjliYTU4YWEwN2UxMzcwOGNmZGRkOCIsImlhdCI6MTc4MTI5ODE4NSwiZXhwIjoxNzgxMjk4MjQ1fQ.eC7tezJN0zkpToV8Oy_unV4cxcYNN1IKbXwtJwF3KRQ
+Content-Type: application/json
+
+{
+    "title": "note 3",
+    "description": "description of note 3"
 }
 
 
+###
+//get single note
+GET http://localhost:3000/api/v1/notes/6a2b51915529e851945fbbf2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF6aXoiLCJpZCI6IjZhMjliYTU4YWEwN2UxMzcwOGNmZGRkOCIsImlhdCI6MTc4MTIyODgxMCwiZXhwIjoxNzgxMjI4ODcwfQ.MRG-GOcenfPjgHJHRe5FBOP7UrEZ8z2wCDdVlug02dY
+###
+//get all notes
+GET http://localhost:3000/api/v1/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyYW5tZSI6ImF6aXoiLCJpZCI6IjZhMjliYTU4YWEwN2UxMzcwOGNmZGRkOCIsImlhdCI6MTc4MTIzMTIyOSwiZXhwIjoxNzgxMjMxMjg5fQ.Y3yI0X__bsOX4tAr8tkuK0Fo_jKyc9FOx3FNkQrU6yI
+###
+//delete note
+DELETE http://localhost:3000/api/v1/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyYW5tZSI6ImF6aXoiLCJpZCI6IjZhMjliYTU4YWEwN2UxMzcwOGNmZGRkOCIsImlhdCI6MTc4MTMwMTEwOSwiZXhwIjoxNzgxMzAxMTY5fQ.LA87cs8Xxrl1XzMZDYonx9hcGzr_vJEcNMCJvFMvTi0
+Content-Type: application/json
 
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF6aXoiLCJpZCI6IjZhMjliYTU4YWEwN2UxMzcwOGNmZGRkOCIsImlhdCI6MTc4MTI5ODEwNX0.XCZXFRJrP1dAXlIPWDyrUZBMbf07oHZu-z9zXxz3C-0"
+}
+###
+//update note
+PATCH  http://localhost:3000/api/v1/notes/6a2b79569cbb3b7dd709f078
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF6aXoiLCJpZCI6IjZhMjliYTU4YWEwN2UxMzcwOGNmZGRkOCIsImlhdCI6MTc4MTIzNTU3MiwiZXhwIjoxNzgxMjM1NjMyfQ.EU4YfBm6gPOvxu_Zrvchz1ct3yE4nyWX9F5uKbrlUko
+Content-Type: application/json
+
+{
+    "isPinned": "true"
+}
